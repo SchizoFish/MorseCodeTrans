@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <link href="~/css/style.css" rel="stylesheet" />
+
+</head>
+<body style="background: white">
+    
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: darkslategray">
+        <div class="dropbtn">
+            <select onChange="dropdownTip(this.value)" name="search_type" style="margin-right:10px; margin-top:2px;">
+                <option disabled="disabled" selected="selected">Listen</option>
+                <option onclick="playA()">'A' .-</option>
+                <option onclick="playB()">'B' -...</option>
+                <option onclick="playC()">'C' -.-.</option>
+                <option onclick="playD()">'D' -..</option>
+                <option onclick="playE()">'E' .</option>
+                <option onclick="playF()">'F' ..-.</option>
+                <option onclick="playG()">'G' --.</option>
+                <option onclick="playH()">'H' ....</option>
+                <option onclick="playI()">'I' ..</option>
+                <option onclick="playJ()">'J' .---</option>
+                <option onclick="playK()">'K' -.-</option>
+                <option onclick="playL()">'L' .-..</option>
+                <option onclick="playM()">'M' --</option>
+                <option onclick="playN()">'N' -.</option>
+                <option onclick="playO()">'O' ---</option>
+                <option onclick="playP()">'P' .--.</option>
+                <option onclick="playQ()">'Q' --.-</option>
+                <option onclick="playR()">'R' .-.</option>
+                <option onclick="playS()">'S' ...</option>
+                <option onclick="playT()">'T' -</option>
+                <option onclick="playU()">'U' ..-</option>
+                <option onclick="playV()">'V' ...-</option>
+                <option onclick="playW()">'W' .--</option>
+                <option onclick="playX()">'X' -..-</option>
+                <option onclick="playY()">'Y' -.--</option>
+                <option onclick="playZ()">'Z' --..</option>
+            </select>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 style="color: black">[ Morse Code Translator ]</h1>
+        @RenderBody()
+    </div>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.17.0/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/js/JavaScript.js"></script>
+    
+
+    <script type="text/javascript">
+        function dropdownTip(value) {
+            console.log(value);
+            document.getElementById("result").innerHTML = value;
+        }
+    </script>
+
+</body>
+</html>

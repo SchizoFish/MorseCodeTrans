@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[Translations]
+(
+	[Id] INT PRIMARY KEY IDENTITY NOT NULL, 
+    [Text] NVARCHAR(50) NOT NULL, 
+    [Morse] NVARCHAR(50) NOT NULL
+)

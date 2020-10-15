@@ -1,0 +1,47 @@
+﻿@model MorseIndexVM
+@{
+    ViewData["Title"] = "Translate";
+}
+
+<div class="container">
+
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Translate">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <span asp-validation-for="MorseCodeInput.TextToTrans" class="text-danger" style="color: black"></span>
+                <div class="form-group">
+                    @*<label asp-for="MorseCodeInput.TextToTrans" class="control-label"></label>*@
+                    <input asp-for="MorseCodeInput.TextToTrans" class="form-control" />
+                    @*<span asp-validation-for="MorseCodeInput.TextToTrans" class="text-danger"></span>*@
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Translate" class="btn btn-primary" style="border-color: black" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <h3 style="color: black">Result</h3>
+    <hr />
+
+    <table align="center" font-size="30px" style="color: black; font-size: 25px">
+        <tbody>
+            @foreach (var item in Model.Result)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OriginalText)
+                        &nbsp;/&nbsp;
+                        @Html.DisplayFor(modelItem => item.Result)
+                        
+                    <br />
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
